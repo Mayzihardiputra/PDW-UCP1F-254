@@ -1,237 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tech Community</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    * { font-family: 'Poppins', sans-serif; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Community</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+      }
 
-    body { background-color: #f0f4f8; }
+      body {
+        background-color: #f0f4f8;
+      }
 
-    .navbar-custom {
-      background: linear-gradient(135deg, #0d1117, #161b22);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
-    }
+      .navbar-custom {
+        background: linear-gradient(135deg, #0d1117, #161b22);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      }
 
-    .hero {
-      background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #21262d 100%);
-      padding: 100px 0 70px;
-      color: white;
-      text-align: center;
-    }
-    .hero h1 span { color: #58a6ff; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(88,166,255,0.15);
-      border: 1px solid rgba(88,166,255,0.4);
-      color: #58a6ff;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #0d1117 0%,
+          #1a1f2e 50%,
+          #21262d 100%
+        );
+        padding: 100px 0 70px;
+        color: white;
+        text-align: center;
+      }
+      .hero h1 span {
+        color: #58a6ff;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(88, 166, 255, 0.15);
+        border: 1px solid rgba(88, 166, 255, 0.4);
+        color: #58a6ff;
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+      }
 
-    .stats-bar {
-      background: #1a1f2e;
-      color: white;
-      padding: 24px 0;
-    }
-    .stat-item h3 { color: #58a6ff; font-weight: 700; }
+      .stats-bar {
+        background: #1a1f2e;
+        color: white;
+        padding: 24px 0;
+      }
+      .stat-item h3 {
+        color: #58a6ff;
+        font-weight: 700;
+      }
 
-    .section-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      padding: 32px;
-      margin-bottom: 30px;
-    }
+      .section-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+        padding: 32px;
+        margin-bottom: 30px;
+      }
 
-    .section-title {
-      font-weight: 700;
-      color: #0d1117;
-      border-left: 4px solid #58a6ff;
-      padding-left: 14px;
-      margin-bottom: 24px;
-    }
+      .section-title {
+        font-weight: 700;
+        color: #0d1117;
+        border-left: 4px solid #58a6ff;
+        padding-left: 14px;
+        margin-bottom: 24px;
+      }
 
-    .table thead th {
-      background: linear-gradient(135deg, #0d1117, #1a1f2e);
-      color: white;
-      border: none;
-    }
-    .table-hover tbody tr:hover { background-color: #e8f4fd; }
-    .table td, .table th { vertical-align: middle; }
+      .table thead th {
+        background: linear-gradient(135deg, #0d1117, #1a1f2e);
+        color: white;
+        border: none;
+      }
+      .table-hover tbody tr:hover {
+        background-color: #e8f4fd;
+      }
+      .table td,
+      .table th {
+        vertical-align: middle;
+      }
 
-    .badge-minat {
-      background: linear-gradient(135deg, #58a6ff, #1f6feb);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 50px;
-      font-size: 0.78rem;
-    }
+      .badge-minat {
+        background: linear-gradient(135deg, #58a6ff, #1f6feb);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.78rem;
+      }
 
-    .nav-link-custom {
-      color: #cdd9e5 !important;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-link-custom:hover, .nav-link-custom.active {
-      color: #58a6ff !important;
-    }
+      .nav-link-custom {
+        color: #cdd9e5 !important;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-link-custom:hover,
+      .nav-link-custom.active {
+        color: #58a6ff !important;
+      }
 
-    .btn-primary-custom {
-      background: linear-gradient(135deg, #1f6feb, #58a6ff);
-      border: none;
-      border-radius: 50px;
-      padding: 10px 28px;
-      font-weight: 600;
-      color: white;
-      transition: all 0.3s;
-    }
-    .btn-primary-custom:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(31,111,235,0.4);
-      color: white;
-    }
+      .btn-primary-custom {
+        background: linear-gradient(135deg, #1f6feb, #58a6ff);
+        border: none;
+        border-radius: 50px;
+        padding: 10px 28px;
+        font-weight: 600;
+        color: white;
+        transition: all 0.3s;
+      }
+      .btn-primary-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(31, 111, 235, 0.4);
+        color: white;
+      }
 
-    footer {
-      background: linear-gradient(135deg, #0d1117, #1a1f2e);
-      color: #8b949e;
-      padding: 30px 0;
-      text-align: center;
-    }
-    footer span { color: #58a6ff; }
-  </style>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-  <div class="container">
-    <a class="navbar-brand text-white fw-bold fs-4" href="./index.html">
-      <i class="bi bi-cpu-fill me-2" style="color:#58a6ff"></i>Tech Community
-    </a>
-    <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link nav-link-custom active" href="./index.html"> Home</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="./form.html"> Daftar Anggota</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-custom" href="./gallery.html"> Multimedia</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge"> Komunitas Teknologi #1 di Yogyakarta</div>
-    <h1 class="display-4 fw-bold mb-3">Selamat Datang di<br><span>Tech Community</span></h1>
-    <p class="lead mb-4" style="color:#8b949e; max-width:600px; margin:0 auto 30px;">
-      Komunitas teknologi yang menghubungkan para developer, designer, dan tech enthusiast untuk belajar, berkolaborasi, dan berkembang bersama.
-    </p>
-    <div class="d-flex gap-3 justify-content-center flex-wrap">
-      <a href="./form.html" class="btn btn-primary-custom btn-lg">Bergabung Sekarang</a>
-      <a href="./gallery.html" class="btn btn-outline-light btn-lg px-4" style="border-radius:50px;">Lihat Konten</a>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats-bar">
-  <div class="container">
-    <div class="row text-center g-3">
-      <div class="col-6 col-md-3 stat-item">
-        <h3 class="mb-0">500+</h3><small>Anggota Aktif</small>
-      </div>
-      <div class="col-6 col-md-3 stat-item">
-        <h3 class="mb-0">50+</h3><small>Event Bulanan</small>
-      </div>
-      <div class="col-6 col-md-3 stat-item">
-        <h3 class="mb-0">20+</h3><small>Bidang Teknologi</small>
-      </div>
-      <div class="col-6 col-md-3 stat-item">
-        <h3 class="mb-0">3 Thn</h3><small>Berdiri</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TENTANG -->
-<section class="py-5">
-  <div class="container">
-    <div class="section-card">
-      <h4 class="section-title">Tentang Tech Community</h4>
-      <div class="row g-4">
-        <div class="col-md-4 text-center">
-          <i class="bi bi-people-fill display-4 mb-3" style="color:#58a6ff"></i>
-          <h6 class="fw-bold">Kolaborasi</h6>
-          <p class="text-muted small">Bergabung bersama ratusan tech enthusiast untuk berbagi ilmu dan pengalaman.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="bi bi-lightbulb-fill display-4 mb-3" style="color:#ffa500"></i>
-          <h6 class="fw-bold">Inovasi</h6>
-          <p class="text-muted small">Eksplorasi ide-ide baru dan wujudkan proyek teknologi bersama tim kami.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="bi bi-graph-up-arrow display-4 mb-3" style="color:#3fb950"></i>
-          <h6 class="fw-bold">Pengembangan Diri</h6>
-          <p class="text-muted small">Tingkatkan skill teknologimu melalui workshop, seminar, dan mentoring rutin.</p>
+      footer {
+        background: linear-gradient(135deg, #0d1117, #1a1f2e);
+        color: #8b949e;
+        padding: 30px 0;
+        text-align: center;
+      }
+      footer span {
+        color: #58a6ff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold fs-4" href="./index.html">
+          <i class="bi bi-cpu-fill me-2" style="color: #58a6ff"></i>Tech
+          Community
+        </a>
+        <button
+          class="navbar-toggler border-secondary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto gap-2">
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom active" href="./index.html">
+                Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="./form.html">
+                Daftar Anggota</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="./gallery.html">
+                Multimedia</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- TABEL DATA ANGGOTA -->
-    <div class="section-card">
-      <h4 class="section-title">Data Anggota Komunitas</h4>
-      <p class="text-muted mb-4">Berikut adalah daftar anggota terdaftar di Tech Community.</p>
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover align-middle" id="tabelAnggota">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Bidang Minat</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="bodyAnggota">
-            <!-- diisi oleh JS -->
-          </tbody>
-        </table>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">Komunitas Teknologi #1 di Yogyakarta</div>
+        <h1 class="display-4 fw-bold mb-3">
+          Selamat Datang di<br /><span>Tech Community</span>
+        </h1>
+        <p
+          class="lead mb-4"
+          style="color: #8b949e; max-width: 600px; margin: 0 auto 30px"
+        >
+          Komunitas teknologi yang menghubungkan para developer, designer, dan
+          tech enthusiast untuk belajar, berkolaborasi, dan berkembang bersama.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="./form.html" class="btn btn-primary-custom btn-lg"
+            >Bergabung Sekarang</a
+          >
+          <a
+            href="./gallery.html"
+            class="btn btn-outline-light btn-lg px-4"
+            style="border-radius: 50px"
+            >Lihat Konten</a
+          >
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <p class="mb-0">&copy; 2026 <span>Tech Community</span>. Made with  by para developer muda.</p>
-</footer>
+    <!-- STATS -->
+    <section class="stats-bar">
+      <div class="container">
+        <div class="row text-center g-3">
+          <div class="col-6 col-md-3 stat-item">
+            <h3 class="mb-0">500+</h3>
+            <small>Anggota Aktif</small>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <h3 class="mb-0">50+</h3>
+            <small>Event Bulanan</small>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <h3 class="mb-0">20+</h3>
+            <small>Bidang Teknologi</small>
+          </div>
+          <div class="col-6 col-md-3 stat-item">
+            <h3 class="mb-0">3 Thn</h3>
+            <small>Berdiri</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Data anggota dari array (simulasi penyimpanan sementara)
-  const anggota = [
-    { nama: "Andi Pratama", email: "andi@email.com", minat: "Web Development" },
-    { nama: "Budi Santoso", email: "budi@email.com", minat: "Mobile Development" },
-    { nama: "Citra Dewi", email: "citra@email.com", minat: "UI/UX Design" },
-    { nama: "Deva Ramadhan", email: "deva@email.com", minat: "Data Science" },
-    { nama: "Eka Putri", email: "eka@email.com", minat: "Cybersecurity" },
-  ];
+    <!-- TENTANG -->
+    <section class="py-5">
+      <div class="container">
+        <div class="section-card">
+          <h4 class="section-title">Tentang Tech Community</h4>
+          <div class="row g-4">
+            <div class="col-md-4 text-center">
+              <i
+                class="bi bi-people-fill display-4 mb-3"
+                style="color: #58a6ff"
+              ></i>
+              <h6 class="fw-bold">Kolaborasi</h6>
+              <p class="text-muted small">
+                Bergabung bersama ratusan tech enthusiast untuk berbagi ilmu dan
+                pengalaman.
+              </p>
+            </div>
+            <div class="col-md-4 text-center">
+              <i
+                class="bi bi-lightbulb-fill display-4 mb-3"
+                style="color: #ffa500"
+              ></i>
+              <h6 class="fw-bold">Inovasi</h6>
+              <p class="text-muted small">
+                Eksplorasi ide-ide baru dan wujudkan proyek teknologi bersama
+                tim kami.
+              </p>
+            </div>
+            <div class="col-md-4 text-center">
+              <i
+                class="bi bi-graph-up-arrow display-4 mb-3"
+                style="color: #3fb950"
+              ></i>
+              <h6 class="fw-bold">Pengembangan Diri</h6>
+              <p class="text-muted small">
+                Tingkatkan skill teknologimu melalui workshop, seminar, dan
+                mentoring rutin.
+              </p>
+            </div>
+          </div>
+        </div>
 
-  function renderTabel() {
-    const tbody = document.getElementById('bodyAnggota');
-    tbody.innerHTML = '';
-    anggota.forEach((a, i) => {
-      tbody.innerHTML += `
+        <!-- TABEL DATA ANGGOTA -->
+        <div class="section-card">
+          <h4 class="section-title">Data Anggota Komunitas</h4>
+          <p class="text-muted mb-4">
+            Berikut adalah daftar anggota terdaftar di Tech Community.
+          </p>
+          <div class="table-responsive">
+            <table
+              class="table table-bordered table-hover align-middle"
+              id="tabelAnggota"
+            >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Bidang Minat</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="bodyAnggota">
+                <!-- diisi oleh JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="mb-0">
+        &copy; 2026 <span>Tech Community</span>. Made with by para developer
+        muda.
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Data anggota dari array (simulasi penyimpanan sementara)
+      const anggota = [
+        {
+          nama: "Mayzi hardi",
+          email: "mayzi@email.com",
+          minat: "Web Development",
+        },
+        {
+          nama: "Alfilia deo",
+          email: "deo@email.com",
+          minat: "Mobile Development",
+        },
+        { nama: "Khaliz", email: "khaliz@email.com", minat: "UI/UX Design" },
+        {
+          nama: "Ridho faiq",
+          email: "faiq@email.com",
+          minat: "Data Science",
+        },
+        { nama: "getha", email: "getha@email.com", minat: "Cybersecurity" },
+      ];
+
+      function renderTabel() {
+        const tbody = document.getElementById("bodyAnggota");
+        tbody.innerHTML = "";
+        anggota.forEach((a, i) => {
+          tbody.innerHTML += `
         <tr>
           <td>${i + 1}</td>
           <td><i class="bi bi-person-circle me-2 text-primary"></i>${a.nama}</td>
@@ -240,10 +340,10 @@
           <td><span class="badge bg-success">Aktif</span></td>
         </tr>
       `;
-    });
-  }
+        });
+      }
 
-  renderTabel();
-</script>
-</body>
+      renderTabel();
+    </script>
+  </body>
 </html>
